@@ -1,0 +1,13 @@
+/*
+ * Module: Frontend Legacy App Styles
+ * Purpose: Reserved for app-level styles that may be used by the routed React
+ * pages in the AI CV Screening System.
+ */
+
+/* ===========================
+   APP ROOT
+   =========================== */
+
+.App {
+  text-align: center;
+}
