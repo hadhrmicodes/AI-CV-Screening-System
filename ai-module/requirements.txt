@@ -1,0 +1,7 @@
+# Module: AI Matching Service
+# Purpose: Python dependencies required by the Flask-based CV matching service.
+
+Flask==2.3.3
+scikit-learn==1.3.0
+spacy==3.7.2
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0.tar.gz
