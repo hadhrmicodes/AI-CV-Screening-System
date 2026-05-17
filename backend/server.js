@@ -242,6 +242,22 @@ app.post('/login', async (req, res) => {
 app.post('/register', async (req, res) => {
   const { name, email, password, role, contact, company } = req.body;
 
+  if (!name || !email || !password || !role) {
+    return res.send({ message: 'All fields are required' });
+  }
+
+  if (!email.includes('@')) {
+    return res.send({ message: 'Email must contain @' });
+  }
+
+  if (contact && !/^\d+$/.test(contact)) {
+    return res.send({ message: 'Phone number must contain only numbers' });
+  }
+
+  if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password) || !/[^A-Za-z0-9]/.test(password)) {
+    return res.send({ message: 'Password must contain uppercase, lowercase, number, and special character' });
+  }
+
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const query = `
